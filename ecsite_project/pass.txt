@@ -1,0 +1,9 @@
+superUser1
+Email: ec@mail.com
+Username: ecsite
+Password: rewq1234
+
+superUser2 (Oauth)
+Email: oauth@mail.com
+Username: oauth
+Password: rewq1234

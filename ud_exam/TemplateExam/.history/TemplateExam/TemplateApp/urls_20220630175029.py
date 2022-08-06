@@ -1,0 +1,7 @@
+from django.urls import admin
+from django.urls import path,include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('app/', include('TemplateApp.urls')),
+]

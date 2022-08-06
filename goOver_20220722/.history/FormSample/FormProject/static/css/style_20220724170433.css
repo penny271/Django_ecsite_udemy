@@ -1,0 +1,27 @@
+.mail-class{
+    width: 70%;
+    color: blue;
+}
+
+#id_birthday {
+    color:red;
+}
+
+/* <label for="id_mail">メールアドレス:</label> */
+label[for='id_mail']{
+    color:red;
+}
+
+label[for='id_age']{
+    color:blue;
+}
+
+label
+
+#id_job{
+    list-style:none;
+}
+
+.hobbies_class{
+    list-style: none;
+}

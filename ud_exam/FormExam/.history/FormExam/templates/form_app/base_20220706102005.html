@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}DjangoForm{% endblock %}</title>
+  </head>
+  <body>
+    <header>
+      <a href="{% url 'form_app:insert_student' %}">メンバー追加</a>
+      <a href="{% url 'form_app:students_list' %}">メンバー一覧</a>
+      <a href="{% url 'form_app:insert_multiple_students' %}">メンバー一括追加</a>
+    </header>
+    {% block content %}{% endblock %}
+    <p><a href="{% url 'form_app:insert_student' id= student.id%}"
+  </body>
+</html>

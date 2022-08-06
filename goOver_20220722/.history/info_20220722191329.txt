@@ -1,0 +1,3 @@
+ユーザー名 : admin
+メールアドレス: admin@mail.com
+Password: rewq1234

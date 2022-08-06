@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Upload</title>
+  </head>
+  <body>
+    <form method='POST' enctype='multipart/form-data'>
+      {% csrf_token %}
+      <input type='file' name='upload_file'><br>
+      <input type='submit' value='保存'>
+    </form>
+
+    {% if upload_file %}
+    {% if upload_file %}
+    <p>保存先: <a href='{{ uploaded_file_url }}'>{{ uploaded_file_url}}</a></p>
+    {% endif %}
+  </body>
+</html>

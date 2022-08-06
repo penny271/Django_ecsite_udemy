@@ -1,0 +1,31 @@
+<h1>{{name | upper }}</h1>
+<h1>{{page_url | urlize }}</h1>
+<p>BMI: {{bmi | floatformat:2}}</p>
+<p>給料: {{salary | default:'秘密'}}</p>
+<p>給料: {{fruits | random | lower}}</p>
+<p>給料: {{fruits | join:', '}}</p>
+<p>{{ msg | linebreaks}}</p>
+<p>{{ msg2 | truncatechars:7}}</p>
+{% filter xxx %}
+
+{% endfil//sub  #10 filter()を使ってみよう
+//ep 次は配列の要素をチェックして、条件にあうものだけを抽出して別の配列として取得することができる filter() について見ていきましょう。
+//to:
+
+{
+   const numbers = [1, 4, 6, 7, 8, 10, 12,998];
+
+
+
+   const evenNumbers = numbers.filter(num => {
+      if (num % 5 ===0 || num % 3 ===0) {
+         return true;
+      } else {
+         return false;
+      }
+   });
+
+         console.log(evenNumbers);
+
+
+   // ep それぞれの要素は今回 number で取り出すことにして、その number がある条件に合致するときは true 、そうでないときは false を返すとしてあげると、 true を返した要素だけが抽出されるという仕組みになっています。

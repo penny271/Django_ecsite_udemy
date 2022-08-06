@@ -1,0 +1,16 @@
+{% extends 'form_app/base.html' %}
+{% block title %}メンバー編集画面 {{ block.super }}{% endblock %}
+{% block content %}
+{% comment %} <form method='POST' enctype='multipart/form-data'> {% endcomment %}
+<form enctype='multipart/form-data'>
+  {% csrf_token %}
+    {{ update_form.as_p }}
+  <input  value='更新'>
+  どちらでも問題ない src=" " があってもなくても
+  {% comment %} <p><img src={{ student.picture.url}}></p> {% endcomment %}
+  <p><img src="{{ student.picture.url}}"></p>
+</form>
+
+{% comment %} <p><a href="{% url 'form_app:delete_student' id=student.id  %}">削除する</a></p> {% endcomment %}
+
+{% endblock %}

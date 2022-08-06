@@ -1,0 +1,22 @@
+2022-07-30 23:40:08,517 ERROR [/Users/aokihirotaka/Pictures/udemy/ClassBaseView/class_based_view/class_based_view/middleware.py:20] クエリーに一致する books は見つかりませんでした
+Traceback (most recent call last):
+  File "/Users/aokihirotaka/opt/anaconda3/envs/djangoenv/lib/python3.8/site-packages/django/views/generic/detail.py", line 53, in get_object
+    obj = queryset.get()
+  File "/Users/aokihirotaka/opt/anaconda3/envs/djangoenv/lib/python3.8/site-packages/django/db/models/query.py", line 496, in get
+    raise self.model.DoesNotExist(
+store.models.Books.DoesNotExist: Books matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/aokihirotaka/opt/anaconda3/envs/djangoenv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/aokihirotaka/opt/anaconda3/envs/djangoenv/lib/python3.8/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/aokihirotaka/opt/anaconda3/envs/djangoenv/lib/python3.8/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/aokihirotaka/opt/anaconda3/envs/djangoenv/lib/python3.8/site-packages/django/views/generic/detail.py", line 108, in get
+    self.object = self.get_object()
+  File "/Users/aokihirotaka/opt/anaconda3/envs/djangoenv/lib/python3.8/site-packages/django/views/generic/detail.py", line 55, in get_object
+    raise Http404(
+django.http.response.Http404: クエリーに一致する books は見つかりませんでした

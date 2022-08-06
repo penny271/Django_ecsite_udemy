@@ -1,0 +1,7 @@
+<!--# テンプレート側 Class Based View(FormView)
+form: データを挿入するさいに用いるFormが入っている。-->
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p}}
+  <input type="submit" value="保存">
+</form>

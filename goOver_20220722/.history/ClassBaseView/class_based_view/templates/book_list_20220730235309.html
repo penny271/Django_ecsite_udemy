@@ -1,0 +1,30 @@
+<!--# テンプレート側
+object_list: 取得したオブジェクトの一覧が格納されている。 -->
+
+
+<ul>
+    {% for object in object_list %}
+      <li>名前: {{ object.name }}</li>
+      <li>説明: {{ object.description }}</li>
+    {% endfor %}
+</ul>
+
+
+<p><a href="{% url 'store:add_book' %}">データの追加</p>
+<table>
+  <tbody>
+  {% for object in object_list %}
+    <tr>
+      <td>名前: <a href="{{ object.get_absolute_url }}">{{ object.name }}</a></td>
+      <td>説明: {{ object.description }}</td>
+      <td><a href="{% url 'store:edit_book' object.id %}">編集</td>
+      <td><a href="{% url 'store:delete_book' object.id %}">削除</td>
+      <td>
+      {% for picture in object.pictures_set.all %}
+        <img width="20px" height="20px" src={{ picture.picture.url}}>
+      {% endfor %}
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+
+
+{% block title %}Sample1 {{ block.super }}{% endblock %}
+{% block content %}
+<link rel='stylesheet' type='text/css' href='{% static "home.css" %}'>
+<img src="{% static 'tmp/sample.jpg' %}">
+
+<link rel='stylesheet' type='text/css' href='{% static "download/home.css" %}'>
+<img src="{% static 'download/sample.jpg' %}">
+<p>Sample1</p>
+<p>Sample1</p>
+<p>Sample1</p>
+{% endblock %}

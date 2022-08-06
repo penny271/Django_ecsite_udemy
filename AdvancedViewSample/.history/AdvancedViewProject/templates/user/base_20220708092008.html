@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <nav>
+    <a href="{% url 'user:index' %}">ホーム</a>
+    <a href="{% url 'admin:index' %}">管理画面</a>
+  {% if user.is_authenticated %}
+    <a href="{% url 'user:user_logout' %}">ログアウト</a>
+  {% else %}
+      <a href="{% url 'user:register' %}">登録画面</a>
+      <a href="{% url 'user:user_login' %}">ログイン</a>
+  {% endif %}
+    <a href="{% url 'user:info' %}">登録画面</a>
+  </nav>
+  <div>
+    {% block content %}
+    {% endblock content %}
+  </div>
+</body>
+</html>

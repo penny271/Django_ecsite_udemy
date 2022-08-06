@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+  <form method="POST">
+  {% csrf_token %}
+    {% comment %} <table>
+      {{form.as_table}}
+    </table> {% endcomment %}
+    {{form.name.label}}: {{form.name}}
+    {% if form.name.errors %}
+      <div style="color:red;"> {{form.name.errors.as_text}}</div>
+    {% endif %}
+    {{form.name.label}}: {{form.name}}
+    {% if form.name.errors %}
+      <div style="color:red;"> {{form.name.errors.as_text}}</div>
+    {% endif %}
+    <input type="submit" value="送信">
+  </form>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+クライアントID
+617198864378-ftmqcma4ab0rpm6bedusaaich33cu6k7.apps.googleusercontent.com
+
+クライアントシークレット
+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

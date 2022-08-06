@@ -1,0 +1,14 @@
+{% extends "form_app/base.html" %}
+{% block title %}メンバー一覧画面 {{ block.super }}{% endblock  %}
+{% block content %}
+<table>
+  <tr>
+    <th>名前</th>
+    <th>年齢</th>
+    <th>学年</th>
+  </tr>
+  {% for student in students %}
+  
+  {% endfor %}
+</table>
+{% endblock content %}

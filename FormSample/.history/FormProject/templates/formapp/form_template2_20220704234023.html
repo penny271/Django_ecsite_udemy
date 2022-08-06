@@ -1,0 +1,10 @@
+<form method="POST">
+  {% csrf_token %}
+  {% if as_table %}
+    <table>
+      {{ form.as_p}}
+    </table>
+  
+  {% if as_table %}
+    <input type="submit" value="送信" />
+</form>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  {% comment %} Bootstrap {% endcomment %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'accounts:home' %}">ホーム</a>
+    {% if user.is_authenticated %}
+    if
+    <a class="navbar-brand" href="{% url 'accounts:user_logout' %}">ログアウト</a>
+    {% else %}
+    <a class="navbar-brand" href="{% url 'accounts:user_login' %}">ログイン</a>
+    <a class="navbar-brand" href="{% url 'accounts:regist' %}">ユーザ登録</a>
+    {% endif %}
+    <a class="navbar-brand" href="{% url 'accounts:user' %}">ユーザ画面</a>
+  </nav>
+  {% block content %}{% endblock content %}
+</body>
+</html>
+

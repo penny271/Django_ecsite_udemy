@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Upload</title>
+  </head>
+  <body>
+    <form method='POST'>
+      <p>あいうえお</p>
+      {% csrf_token %}
+      {% comment %} {{ formset.as_p}} {% endcomment %}
+      {% comment %} 下記を記載する必要あり!! エラーメッセージがでなかった。。。# フォームの情報を格納しており、formsetをループで利用するのに必要 {% endcomment %}
+      {{ formset.management_form }}
+      {% for form in formset %}
+        <p>あいうえお</p>
+        {{ form.as_p }}
+        <hr>
+      {% endfor %}
+      <input type='submit' value='送信'>
+  </body>
+</html>

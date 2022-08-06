@@ -1,0 +1,41 @@
+<h1>ユーザーリスト</h1>
+<a href="{% url 'store:item_list' %}">アイテムリストへ</a>
+
+
+#- パスワード暗号化 ハッシュ記載 上から順に利用可能なものが使用される
+#- Argon2は install必要
+#- algon2のインストールできない - 解決方法
+#- pip install django[algon2] <= できなかった場合
+#- こｔれを実行する　pip install argon2_cffi
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.BCryptPasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+]
+
+#- ユーザー認証設定
+#- 自分でutils フォルダに作成したパターンを登録できる - L177
+AUTH_PASSWORD_VALIDATORS = [
+    {
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        #- 8文字以上
+        'OPTIONS': {
+            'min_length':8,
+        }
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+    },
+    {
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+    },
+    #- 追加 - BASE_DIR = Path(__file__).resolve().parent.parent から辿っている
+    {
+        'NAME': 'utils.validators.CustomPasswordValidator'
+    },
+]

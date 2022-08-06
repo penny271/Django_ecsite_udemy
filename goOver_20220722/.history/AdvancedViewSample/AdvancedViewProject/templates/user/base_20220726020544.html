@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <nav>
+    <a href="{% url 'user:index' %}">ホーム</a>
+    <a href="{% url 'admin:index' %}">管理画面</a>
+  {% comment %} {% if user.is_authenticated %} {% endcomment %}
+    <a href="{% url 'user:user_logout' %}">ログアウト</a>
+  {% comment %} {% else %} {% endcomment %}
+      {% comment %} <a href="{% url 'user:registration' %}">登録画面</a>
+      <a href="{% url 'user:user_login' %}">ログイン</a> {% endcomment %}
+  {% comment %} {% endif %} {% endcomment %}
+  {% comment %} views.pyにて @login_requiredしているため、そのページへ遷移しようとしてもログインしていないと遷移できずエラーとなる {% endcomment %}
+    {% comment %} <a href="{% url 'user:info' %}">インフォメーション</a> {% endcomment %}
+  </nav>
+  <div>
+    {% block content %}
+    {% endblock content %}
+  </div>
+</body>
+</html>

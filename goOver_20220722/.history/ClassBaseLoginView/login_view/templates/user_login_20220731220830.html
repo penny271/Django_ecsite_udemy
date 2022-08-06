@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }} <!-- CreateView経由なので変数formが使える -->
+  <!--value={{ request.GET.next }}では ~/accounts/login/?next=/accounts/user/ -->
+  <input type="hidden" name="next" value="{{ request.GET.next }}"> <!-- /?next=の後の値を取得できる /?next=/accounts/user/ -->
+  <input type="submit" value="ログイン">
+</form>
+{% endblock content %}

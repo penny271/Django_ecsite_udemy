@@ -1,0 +1,5 @@
+マイグレーションの初期化の手順
+https://creepfablic.site/2020/04/30/django-migrate-error/
+
+
+https://brhk.me/programing/django-foreignkey/

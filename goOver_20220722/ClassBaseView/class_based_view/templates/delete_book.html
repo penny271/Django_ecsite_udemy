@@ -1,0 +1,7 @@
+<!--# # テンプレート側
+object: 取得したオブジェクトが格納されている。-->
+<form method="POST">
+  {% csrf_token %}
+  <p>{{ object.name }}を削除してよろしいでしょうか?</p>
+  <input type="submit" value="削除する">
+</form>

@@ -1,0 +1,5 @@
+ユーザー名 (leave blank to use 'aokihirotaka'): admin
+メールアドレス: admin@mail.com
+Password:
+Password (again):
+Superuser created successfully.

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    {% load static %}
+    {% comment %} <link rel='stilesheet' href='{% static "css/sytle.css" %}'> {% endcomment %}
+    <link rel='stylesheet' href='{% static "css/style.css" %}'>
+  </head>
+  <body>
+    <form method='POST'>
+      <p>あいうえお</p>
+      {% csrf_token %}
+      {{ formset.as_p}}
+      {% comment %} 下記を記載する必要あり!! エラーメッセージがでなかった。。。# フォームの情報を格納しており、formsetをループで利用するのに必要 {% endcomment %}
+      {{ formset.management_form }}
+      {% for form in formset %}
+        <p>あいうえお</p>
+        {{ form.as_p }} {% endcomment %}
+        <hr>
+      {% endfor %} {% endcomment %}
+      <input type='submit' value='送信'>
+  </body>
+</html>

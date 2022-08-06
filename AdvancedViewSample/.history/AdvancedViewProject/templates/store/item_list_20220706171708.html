@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <th>名前</th>
+    <th>値段</th>
+  </tr>
+  {% for item in items %}
+  <tr>
+    <td>{{ item.name }}</td>
+    <td>{{ item.price }}</td>
+  </tr>
+  {% endfor %}
+</table>

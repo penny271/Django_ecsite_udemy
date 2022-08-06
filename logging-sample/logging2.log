@@ -1,0 +1,7 @@
+2022-07-14 23:13:38,931-__main__-ERROR-エラーログ
+2022-07-14 23:13:38,931-__main__-CRITICAL-クリティカルログ
+2022-07-14 23:13:38,931-__main__-ERROR-division by zero
+Traceback (most recent call last):
+  File "/Users/aokihirotaka/Pictures/udemy/logging-sample/02_logging_sample.py", line 40, in <module>
+    c = a/b
+ZeroDivisionError: division by zero

@@ -1,0 +1,25 @@
+{# <h1>Name: {{ my_name }}</h1> #}
+<!-- 配列の一部だけ抽出する方法: favorite_fruits[2]は不可 favorite_fruits.2が正しい -->
+<!--- 名前空間つきの詳細ビューを指すようにします -->
+
+{# <h2>果物: {{favorite_fruits.2}}</h2> #}
+{# <h3>Age: {{my_info.age}}</h3>#} {# for #}
+<ul>
+  {% for fruit in favorite_fruits %}
+    <li>{{ fruit }}</li>
+  {% endfor %}
+</ul>
+
+{# if #}
+{% if 'grape' in favorite_fruits %}
+  <p>Grapeあります</p>
+{% elif 'lemon' in favorite_fruits %}
+  <p>Lemonあります</p>
+{% else %}
+  <p>Not Found</p>
+{% endif %}
+
+{% if 'age' in my_info %}
+  <p>
+
+{% endif %}
